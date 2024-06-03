@@ -1,0 +1,162 @@
+$white : hsl(0, 0%, 100%);
+$light-grey: hsl(217, 12%, 63%);
+$light-grey-light: hsl(217, 12%, 63%, 0.1);
+$dark-blue: hsl(213, 19%, 18%);
+$very-dark-blue: hsl(216, 12%, 8%);
+$orange-color: hsl(25, 97%, 53%);
+$orange-color-light: hsl(25, 97%, 53%, 0.8);
+$font-normal: 15px;
+$overpass-font: 'Overpass', sans-serif;
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: $overpass-font;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $very-dark-blue;
+}
+
+main {
+    width: 380px;
+    background-color: $dark-blue;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.rating-container {
+    padding: 10px 20px;
+    display: none;
+    .star-container {
+        background-color: $light-grey-light;
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .content-container {
+        .content-heading {
+            color: white;
+            margin: 20px 0;
+        }
+        .content-desc {
+            color: $light-grey;
+            margin-bottom: 10px;
+            font-size: $font-normal;
+        }
+    }
+    .rating-numbers {
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .rating-number {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: $light-grey-light;
+            color: $light-grey;
+            font-size: $font-normal;
+            border: none;
+            &:hover {
+                background-color: $orange-color;
+                cursor: pointer;
+                color: $very-dark-blue;
+            }
+        }
+        .active-rating {
+            background-color: $white;
+            color: $very-dark-blue;
+        }
+    }
+    .submit-button-container {
+        .submit-button {
+            width: 100%;
+            padding: 15px 0;
+            background-color: $orange-color;
+            border: none;
+            border-radius: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            font-size: $font-normal;
+            &:hover {
+                cursor: pointer;
+                background-color: $white;
+            }
+        }
+    }
+}
+
+.greetings-container {
+    display: none;
+    padding: 20px;
+    .rating-result {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        button {
+            padding: 5px 15px;
+            color: $orange-color-light;
+            background-color: $light-grey-light;
+            border: none;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+    }
+    .thanks-container {
+        text-align: center;
+        h2 {
+            color: $white;
+        }
+        p {
+            color: $light-grey;
+            font-size: $font-normal;
+            margin: 20px 0;
+        }
+    }
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    position: fixed;
+    bottom: 0%;
+    color: $light-grey;
+    a { 
+        color: hsl(228, 45%, 44%); 
+    }
+}
+
+@media (min-width: 300px) and (max-width: 400px) {
+    main {
+        width: 260px;
+    }
+    .rating-container, .greetings-container {
+        padding: 0;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 575px) {
+    main {
+        width: 320px;
+    }
+    .rating-container, .greetings-container {
+        padding: 0 10px;
+    }
+}
